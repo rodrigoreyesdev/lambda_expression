@@ -1,5 +1,12 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
+        FunctionalLambda functionalLambda=()->System.out.println("llamando metodo abstracto de la interfaz");
+        Main objeto = new Main();
+        objeto.miMetodo(functionalLambda);
+    }
+
+    public void miMetodo(FunctionalLambda param){
+        param.saludar();
     }
 }
