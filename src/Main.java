@@ -1,11 +1,18 @@
+import java.util.function.Function;
+
 public class Main {
     public static void main(String[] args) {
-
-        CalculadoraLongFunctionalLambda calL = (x, y) -> x + y;
-        System.out.println(create().calcular(2L, 2L));
+       Function<Integer, String> convertidor = x -> Integer.toString(x);
+       // Using method Apply to convert an input into diferent type int the result
+        System.out.println(convertidor.apply(3).length());
+        System.out.println(convertidor.apply(30).length());
     }
 
-    public static CalculadoraLongFunctionalLambda create() {
-        return ((x, y) -> x / y);
-    }
+
+    /*Description method apply of Function interface
+    Function<Integer,String> convertidor1= new Function<Integer, String>() {
+        @Override
+        public String apply(Integer integer) {return "";}
+    };
+ */
 }
