@@ -19,4 +19,16 @@ public class Evaluador {
         return listaEmpAprobados;
     }
 
+    public List<Empleado> evaluarAlContrario(
+            List<Empleado> listaEmpleados, Predicate<Empleado> predicateEvaluador) {
+
+        List<Empleado> listaEmpNoAprobados = new ArrayList<>();
+        for (Empleado empleado : listaEmpleados) {
+            if (predicateEvaluador.negate().test(empleado)) {
+                listaEmpNoAprobados.add(empleado);
+            }
+        }
+        return listaEmpNoAprobados;
+    }
+
 }
