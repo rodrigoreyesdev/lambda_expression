@@ -49,7 +49,13 @@ public class MainEmpleado {
         System.out.println("" +
                 "\nSalarios actualizados para los empleados jovenes ");
         for (Empleado empleado : empJovenes) {
-            System.out.println("Empleado menor a 25 " +empleado.getNombre() +" con salario actualizado : " + empleado.getSalario());
+            System.out.println("Empleado menor a 25 " + empleado.getNombre() + " con salario actualizado : " + empleado.getSalario());
+        }
+        List<Empleado> empMayores = evaluador.evaluarAlContrario(
+                listaEmpleados, empleado -> empleado.getEdad() < 25);
+        System.out.println("\nEmpleados mayores ");
+        for (Empleado empleado : empMayores) {
+            System.out.println("Empleado mayor a 25 " + empleado.getNombre());
         }
     }
 
