@@ -1,9 +1,13 @@
 package model;
 
+import java.util.List;
 import java.util.function.BiFunction;
+import java.util.function.Consumer;
 
 public class Funciones {
-    public double incrementaSalario(Empleado empleado, double incremento, BiFunction<Double, Double, Double> biFunction) {
-        return biFunction.apply(empleado.getSalario(), incremento);
+    public void aceptaTodos(List<Estudiante> estudiantes, Consumer<Estudiante> consumer) {
+        for (Estudiante estudiante : estudiantes) {
+            consumer.accept(estudiante);
+        }
     }
 }
