@@ -18,12 +18,14 @@ public class MainEstudiante {
         Consumer<Estudiante> consumer1 =
                 e -> System.out.println("Nombre: " + e.getNombre() +
                         " Calificación: " + e.getCalificacion());
-        Consumer<Estudiante> consumer2 =
-                e -> e.setCalificacion(e.getCalificacion() * 1.15);
         System.out.println("\nEstudiantes sin calificacion actualizada");
         funciones.aceptaTodos(listaEstudiantes, consumer1);
+        Consumer<Estudiante> consumer2 =
+                e -> e.setCalificacion(e.getCalificacion() * 1.15);
+        Consumer<Estudiante> consumer3 =consumer1.andThen(consumer2);
         System.out.println("\nEstudiantes con calificacion actualizada");
-        funciones.aceptaTodos(listaEstudiantes, consumer2);
-        funciones.aceptaTodos(listaEstudiantes, consumer1);
+        funciones.aceptaTodos(listaEstudiantes, consumer3);
+
+
     }
 }
